@@ -125,6 +125,8 @@ app.get('/s/:token', async (c) => {
 
 app.get('/admin/login', (c) => c.env.ASSETS.fetch(new URL('/login.html', c.req.url)));
 
+app.get('/impressum', (c) => c.env.ASSETS.fetch(new URL('/impressum.html', c.req.url)));
+
 app.get('/admin', async (c) => {
   const lehrer = await getLehrer(c);
   if (!lehrer) return c.redirect('/admin/login');
