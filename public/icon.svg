@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <title>GimmeOne App-Icon</title>
+  <desc>Grosse goldene Eins auf tiefblauem Hintergrund, daruber eine Sprechblase mit Fragezeichen, unten rechts ein grunes Hackchen-Abzeichen.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4656CE"/>
+      <stop offset="0.55" stop-color="#2C3A96"/>
+      <stop offset="1" stop-color="#1B2470"/>
+    </linearGradient>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="0" y1="240" x2="0" y2="790">
+      <stop offset="0" stop-color="#FFE066"/>
+      <stop offset="0.55" stop-color="#F7BC33"/>
+      <stop offset="1" stop-color="#EA9E00"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3EDD7E"/>
+      <stop offset="1" stop-color="#1FA85A"/>
+    </linearGradient>
+    <filter id="shadowGlyph" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000F3D" flood-opacity="0.35"/>
+    </filter>
+    <filter id="shadowSoft" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000F3D" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <!-- Hintergrund: abgerundetes Quadrat -->
+  <rect x="0" y="0" width="1024" height="1024" rx="232" fill="url(#bg)"/>
+
+  <!-- Dezente Hintergrund-Deko -->
+  <circle cx="880" cy="920" r="330" fill="#FFFFFF" opacity="0.06"/>
+  <circle cx="120" cy="880" r="220" fill="#FFFFFF" opacity="0.05"/>
+
+  <!-- Sprechblase mit Fragezeichen (uber der Eins) -->
+  <g filter="url(#shadowSoft)">
+    <polygon points="265,299 340,374 305,300" fill="#FFFFFF"/>
+    <rect x="150" y="158" width="200" height="146" rx="40" fill="#FFFFFF"/>
+    <text x="250" y="274" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="104" fill="#2C3A96">?</text>
+  </g>
+
+  <!-- Die goldene Eins -->
+  <g filter="url(#shadowGlyph)" stroke="url(#gold)" stroke-linecap="butt" fill="none">
+    <line x1="515" y1="315" x2="387" y2="446" stroke-width="100"/>
+    <line x1="515" y1="265" x2="515" y2="765" stroke-width="172"/>
+  </g>
+  <!-- Glanz-Highlight auf dem Schaft -->
+  <rect x="452" y="292" width="26" height="86" rx="13" fill="#FFFFFF" opacity="0.32"/>
+
+  <!-- Grunes Hackchen-Abzeichen -->
+  <g filter="url(#shadowSoft)">
+    <circle cx="688" cy="722" r="104" fill="url(#green)"/>
+    <circle cx="688" cy="722" r="104" fill="none" stroke="#FFFFFF" stroke-width="10" opacity="0.35"/>
+  </g>
+  <path d="M 642 722 L 678 757 L 744 664" fill="none" stroke="#FFFFFF" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
