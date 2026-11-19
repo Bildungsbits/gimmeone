@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anmelden – Noten-QR</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="wrap narrow">
+    <section class="card">
+      <p class="brand-big">Noten-QR</p>
+      <p class="hint center">Admin-Bereich für Lehrkräfte</p>
+      <div class="tabs">
+        <button id="tab-login" class="tab active" type="button">Anmelden</button>
+        <button id="tab-register" class="tab" type="button">Registrieren</button>
+      </div>
+
+      <form id="login-form" novalidate>
+        <label>E-Mail
+          <input id="login-email" type="email" required autocomplete="username">
+        </label>
+        <label>Passwort
+          <input id="login-passwort" type="password" required autocomplete="current-password">
+        </label>
+        <button class="btn btn-gross" type="submit">Anmelden</button>
+      </form>
+
+      <form id="register-form" class="hidden" novalidate>
+        <label>E-Mail
+          <input id="reg-email" type="email" required autocomplete="username">
+        </label>
+        <label>Passwort (mind. 8 Zeichen)
+          <input id="reg-passwort" type="password" required minlength="8" autocomplete="new-password">
+        </label>
+        <button class="btn btn-gross" type="submit">Konto erstellen</button>
+      </form>
+
+      <p id="meldung" class="meldung"></p>
+      <p class="hint"><a href="/">Zurück zur Startseite</a></p>
+    </section>
+  </main>
+  <script src="/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "noten-qr",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "QR-Code-Selfassessment: Schuelerinnen und Schueler geben sich nach einer Unterrichtsstunde selbst eine Note (1-6).",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "db:create": "wrangler d1 create noten-qr-db",
+    "db:migrate:local": "wrangler d1 migrations apply noten-qr-db --local",
+    "db:migrate:remote": "wrangler d1 migrations apply noten-qr-db --remote"
+  },
+  "dependencies": {
+    "hono": "^4.6.0",
+    "pdf-lib": "^1.17.1",
+    "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241127.0",
+    "@types/qrcode": "^1.5.5",
+    "typescript": "^5.7.2",
+    "wrangler": "^4.164.0"
+  }
+}

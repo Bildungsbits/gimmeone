@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Selfassessment – Noten-QR</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="wrap narrow">
+    <section class="card">
+      <h1 id="titel">Selfassessment</h1>
+      <p id="info" class="lead">Lade…</p>
+
+      <form id="form" class="hidden" novalidate>
+        <label>Dein Vorname
+          <input id="vorname" required maxlength="60" autocomplete="off" placeholder="Hier Vorname eingeben">
+        </label>
+        <label>Erste 2 Buchstaben deines Nachnamens
+          <input id="initials" required maxlength="2" autocomplete="off" placeholder="Hier 2 Buchstaben eingeben" aria-describedby="initials-hinweis">
+        </label>
+        <p id="initials-hinweis" class="hint">Damit wird dein Eintrag eindeutig zugeordnet – jede Note kann nur einmal abgegeben werden und ist danach nicht mehr änderbar.</p>
+
+        <label>Deine Note für diese Stunde</label>
+        <div class="chips" id="chips">
+          <button type="button" class="chip" data-note="1" data-tendenz="+"><span class="nr">1+</span></button>
+          <button type="button" class="chip" data-note="1" data-tendenz=""><span class="nr">1</span></button>
+          <button type="button" class="chip" data-note="1" data-tendenz="-"><span class="nr">1-</span></button>
+          <button type="button" class="chip" data-note="2" data-tendenz="+"><span class="nr">2+</span></button>
+          <button type="button" class="chip" data-note="2" data-tendenz=""><span class="nr">2</span></button>
+          <button type="button" class="chip" data-note="2" data-tendenz="-"><span class="nr">2-</span></button>
+          <button type="button" class="chip" data-note="3" data-tendenz="+"><span class="nr">3+</span></button>
+          <button type="button" class="chip" data-note="3" data-tendenz=""><span class="nr">3</span></button>
+          <button type="button" class="chip" data-note="3" data-tendenz="-"><span class="nr">3-</span></button>
+          <button type="button" class="chip" data-note="4" data-tendenz="+"><span class="nr">4+</span></button>
+          <button type="button" class="chip" data-note="4" data-tendenz=""><span class="nr">4</span></button>
+          <button type="button" class="chip" data-note="4" data-tendenz="-"><span class="nr">4-</span></button>
+          <button type="button" class="chip" data-note="5" data-tendenz="+"><span class="nr">5+</span></button>
+          <button type="button" class="chip" data-note="5" data-tendenz=""><span class="nr">5</span></button>
+          <button type="button" class="chip" data-note="5" data-tendenz="-"><span class="nr">5-</span></button>
+          <button type="button" class="chip" data-note="6" data-tendenz=""><span class="nr">6</span></button>
+        </div>
+        <p class="hint">1 = sehr gut · 2 = gut · 3 = befriedigend · 4 = ausreichend · 5 = mangelhaft · 6 = ungenügend. Plus (+) und Minus (-) als Tendenz, z. B. „2+“ oder „2-“ (bei der 6 nicht vorgesehen).</p>
+
+        <label id="begruendung-label" class="hidden">Begründung (optional, max. 300 Zeichen)
+          <textarea id="begruendung" rows="3" maxlength="300" placeholder="Kurz begründen, warum du dir diese Note gibst"></textarea>
+        </label>
+
+        <div class="sticky-bar">
+          <button class="btn btn-gross" type="submit">Note abgeben</button>
+        </div>
+      </form>
+
+      <div id="erfolg" class="erfolg-box hidden">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <p id="erfolg-text"></p>
+      </div>
+      <p id="meldung" class="meldung"></p>
+      <p id="geschlossen" class="meldung fehler hidden">Diese Sitzung ist bereits geschlossen. Eine Abgabe ist nicht mehr möglich.</p>
+    </section>
+  </main>
+  <script src="/beitreten.js"></script>
+</body>
+</html>

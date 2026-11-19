@@ -1,0 +1,25 @@
+name = "noten-qr"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Statische Frontend-Dateien (HTML/CSS/JS) aus ./public
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+# D1-Datenbank (SQLite). database_id wird nach `wrangler d1 create` eingetragen.
+[[d1_databases]]
+binding = "DB"
+database_name = "noten-qr-db"
+database_id = "c037a2aa-a82a-4a37-9847-41afa6fedbed"
+migrations_dir = "migrations"
+
+[vars]
+# Gültigkeit der Lehrer-Session in Stunden
+SESSION_TTL_STUNDEN = "12"
+# Archivierte Sitzungen nach 365 Tagen automatisch löschen (DSGVO-Löschfrist)
+ARCHIV_AUFBEWAHRUNG_TAGE = "365"
+
+[triggers]
+crons = ["0 3 * * *"]

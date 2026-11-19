@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard – Noten-QR</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-in">
+      <span class="brand">Noten-QR</span>
+      <span class="topbar-right">
+        <span id="me" class="me"></span>
+        <button id="logout" class="btn btn-ghost btn-klein" type="button">Abmelden</button>
+      </span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card" id="klassen-card">
+      <h2>Meine Klassen</h2>
+      <form id="klasse-form" class="row">
+        <input id="klasse-name" required maxlength="80" placeholder="Hier Klasse eingeben" aria-label="Klassenname">
+        <button class="btn" type="submit">Klasse anlegen</button>
+      </form>
+      <p id="klassen-meldung" class="meldung"></p>
+      <div id="klassen-liste" class="karten"></div>
+    </section>
+
+    <section class="card hidden" id="klasse-detail">
+      <div class="row spread wrap-row">
+        <h2 id="detail-titel"></h2>
+        <button id="detail-zurueck" class="btn btn-ghost btn-klein" type="button">Zurück</button>
+      </div>
+      <form id="sitzung-form" class="row wrap-row">
+        <input id="s-fach" required maxlength="80" placeholder="Hier Unterrichtsfach eingeben" aria-label="Fach">
+        <input id="s-datum" type="date" required aria-label="Datum">
+        <input id="s-stunde" maxlength="40" placeholder="Hier Stunde eingeben (optional)" aria-label="Stunde">
+        <label class="checkbox-label" title="Lernende können dann optional eine kurze Begründung (max. 300 Zeichen) zur Note eingeben">
+          <input type="checkbox" id="s-begruendung"> Begründung erlauben (optional)
+        </label>
+        <button class="btn" type="submit">Sitzung starten</button>
+      </form>
+      <p id="sitzung-meldung" class="meldung"></p>
+      <div id="sitzungen-liste"></div>
+    </section>
+
+    <section class="card hidden" id="uebersicht">
+      <div class="row spread wrap-row">
+        <h2 id="ueb-titel"></h2>
+        <div class="row wrap-row">
+          <button id="ueb-refresh" class="btn btn-ghost btn-klein" type="button">Aktualisieren</button>
+          <button id="ueb-schliessen" class="btn btn-klein" type="button">Sitzung schließen</button>
+          <button id="ueb-archivieren" class="btn btn-danger btn-klein" type="button">Archivieren</button>
+          <a id="ueb-csv" class="btn btn-ghost btn-klein" href="#">CSV</a>
+          <a id="ueb-pdf" class="btn btn-ghost btn-klein" href="#">PDF</a>
+        </div>
+      </div>
+      <div class="row wrap-row mt">
+        <div class="qr-card">
+          <a id="ueb-qr-link" href="#" target="_blank" rel="noopener" title="QR-Code groß auf Extra-Seite anzeigen">
+            <img id="ueb-qr" alt="QR-Code für die Sitzung – Klick öffnet die große Ansicht" width="160" height="160">
+          </a>
+        </div>
+        <div>
+          <p id="ueb-status"></p>
+          <div class="linkfeld">
+            <input id="ueb-link" readonly aria-label="Teilnehmer-Link">
+            <button id="ueb-copy" class="btn btn-ghost btn-klein" type="button">Link kopieren</button>
+          </div>
+        </div>
+      </div>
+      <p id="ueb-stats" class="stats"></p>
+      <div id="ueb-liste" class="eintraege"></div>
+    </section>
+  </main>
+
+  <script src="/dashboard.js"></script>
+</body>
+</html>
